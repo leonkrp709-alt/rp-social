@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RP — Connect. Create. Share.</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#080808;color:white;font-family:Arial,sans-serif}
+header{height:75px;padding:0 7%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #292929}
+.logo{font-size:32px;font-weight:900;letter-spacing:-2px}
+nav button{background:none;color:white;border:1px solid #555;padding:11px 20px;border-radius:25px;margin-left:8px;cursor:pointer}
+nav .active{background:white;color:black}
+main{min-height:85vh;display:flex;align-items:center;justify-content:center;padding:30px 20px}
+.hero{text-align:center;max-width:650px}
+.hero h1{font-size:clamp(65px,15vw,110px);font-weight:900;letter-spacing:-7px}
+.hero p{color:#aaa;font-size:16px;letter-spacing:3px;margin:15px 0}
+.hero .desc{letter-spacing:0;font-size:16px;margin:25px 0;color:#ccc}
+.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.btn{padding:14px 28px;border-radius:30px;border:1px solid white;background:white;color:black;font-weight:bold;cursor:pointer}
+.btn.outline{background:transparent;color:white}
+.panel{display:none;width:100%;max-width:390px}
+.panel h2{font-size:30px;margin-bottom:10px}
+.panel p{color:#999;margin-bottom:25px}
+input{width:100%;padding:15px;margin:8px 0;background:#151515;border:1px solid #333;border-radius:9px;color:white;font-size:15px}
+.panel .btn{width:100%;margin-top:15px}
+.extra{text-align:center;margin-top:22px;color:#aaa;font-size:14px}
+a{color:white;cursor:pointer}
+footer{text-align:center;padding:25px;color:#666;font-size:12px;border-top:1px solid #222}
+@media(max-width:500px){header{padding:0 5%}.hero h1{letter-spacing:-4px}nav button{padding:9px 13px}}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">RP.</div>
+<nav>
+<button onclick="showPage('home')">Home</button>
+<button onclick="showPage('login')">Login</button>
+<button class="active" onclick="showPage('signup')">Join RP</button>
+</nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+<h1>RP.</h1>
+<p>CONNECT. CREATE. SHARE.</p>
+<div class="desc">Your space to connect, share and express yourself.</div>
+<div class="actions">
+<button class="btn" onclick="showPage('signup')">Get Started</button>
+<button class="btn outline" onclick="showPage('login')">Login</button>
+</div>
+</section>
+
+<section class="panel" id="login">
+<h2>Welcome Back.</h2>
+<p>Log in to your RP account.</p>
+<form onsubmit="event.preventDefault();alert('Login will be connected in a future step.')">
+<input type="text" placeholder="Username or email" required>
+<input type="password" placeholder="Password" required>
+<div style="display:flex;justify-content:space-between;color:#aaa;font-size:13px;margin-top:10px">
+<label><input type="checkbox" style="width:auto"> Remember me</label>
+<a onclick="alert('Password recovery will be added later.')">Forgot password?</a>
+</div>
+<button class="btn">Login</button>
+</form>
+<div class="extra">Don't have an account? <a onclick="showPage('signup')">Create account</a></div>
+</section>
+
+<section class="panel" id="signup">
+<h2>Create Account.</h2>
+<p>Join the RP community.</p>
+<form onsubmit="event.preventDefault();alert('Registration will be connected in a future step.')">
+<input type="text" placeholder="Full name" required>
+<input type="text" placeholder="Username" required>
+<input type="email" placeholder="Email address" required>
+<input type="password" placeholder="Password" required>
+<input type="password" placeholder="Confirm password" required>
+<button class="btn">Create Account</button>
+</form>
+<div class="extra">Already have an account? <a onclick="showPage('login')">Login</a></div>
+</section>
+</main>
+
+<footer>© 2026 RP. CONNECT. CREATE. SHARE.</footer>
+
+<script>
+function showPage(page){
+document.getElementById('home').style.display='none';
+document.getElementById('login').style.display='none';
+document.getElementById('signup').style.display='none';
+document.getElementById(page).style.display=page==='home'?'block':'block';
+}
+</script>
+</body>
+  </html>
+  
